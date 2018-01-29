@@ -9,14 +9,9 @@ app.get('/popularKeyword', (req, res)=>{
       return ;
     }
     var keywords = stdout;
-    var keywordArray = keywords.split("\n");
-    var keywordRank = [];
-    var i = 0;
-    for(i=0;i<20;i++){
-      keywordRank[i] = keywordArray[i].split(" ");
-    }
-    response = JSON.parse(JSON.stringify(keywordRank));
-    res.send(response);
+    console.log(keywords);
+    keywords = JSON.stringify(keywords);
+    res.send(keywords);
   });
 });
 
